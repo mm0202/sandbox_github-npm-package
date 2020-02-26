@@ -1,5 +1,5 @@
 export default class TestClass {
-    static test() {
+    static test(): string {
         return "success!!"
     }
 }
