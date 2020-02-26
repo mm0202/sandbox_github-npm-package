@@ -1,6 +1,6 @@
 class TestClass {
     static test() {
-        return "success!!"
+        return "successs!!"
     }
 }
 
