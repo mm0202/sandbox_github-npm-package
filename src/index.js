@@ -4,4 +4,4 @@ class TestClass {
     }
 }
 
-module.exports = TestClass;
+export default TestClass;
