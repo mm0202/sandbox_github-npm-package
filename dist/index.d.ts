@@ -1,5 +1,5 @@
 import * as firebase from "@firebase/testing";
-export declare class FirestoreEmulatorProvider {
+declare class FirestoreEmulatorProvider {
     private projectId;
     private readonly rules;
     constructor(projectId: string, rulesFilePath?: string);
@@ -10,3 +10,4 @@ export declare class FirestoreEmulatorProvider {
     getAdminFirestore(): firebase.firestore.Firestore;
     cleanup(): Promise<any[]>;
 }
+export { FirestoreEmulatorProvider };

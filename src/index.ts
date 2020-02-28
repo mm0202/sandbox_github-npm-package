@@ -1,7 +1,7 @@
 import * as firebase from "@firebase/testing";
 import * as fs from "fs";
 
-export class FirestoreEmulatorProvider {
+class FirestoreEmulatorProvider {
     private readonly rules: string;
 
     constructor(private projectId: string, rulesFilePath: string = 'firestore.rules') {
@@ -40,3 +40,5 @@ export class FirestoreEmulatorProvider {
         return Promise.all(firebase.apps().map(app => app.delete()))
     }
 }
+
+export {FirestoreEmulatorProvider}
