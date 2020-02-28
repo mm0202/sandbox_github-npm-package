@@ -1,11 +1,16 @@
 {
   "name": "sandbox_github-npm-package",
-  "version": "0.0.5",
-  "description": "",
-  "main": "src/index.ts",
+  "version": "0.0.11",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mm0202/sandbox_github-npm-package.git"
@@ -15,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/mm0202/sandbox_github-npm-package/issues"
   },
-  "homepage": "https://github.com/mm0202/sandbox_github-npm-package#readme"
+  "homepage": "https://github.com/mm0202/sandbox_github-npm-package#readme",
+  "dependencies": {
+    "@firebase/testing": "^0.15.1",
+    "typescript": "^3.8.2"
+  }
 }
