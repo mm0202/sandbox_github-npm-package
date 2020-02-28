@@ -1,13 +1,14 @@
-const firebase = require("@firebase/testing");
-const fs = require("fs");
+import * as firebase from "@firebase/testing";
+import * as fs from "fs";
 
-class FirestoreEmulatorProvider {
-    constructor(projectId, rulesFilePath = 'firestore.rules') {
-        this.projectId = projectId;
+export default class FirestoreEmulatorProvider {
+    private readonly rules: string;
+
+    constructor(private projectId: string, rulesFilePath: string = 'firestore.rules') {
         this.rules = fs.readFileSync(rulesFilePath, 'utf8')
     }
 
-    getProjectID() {
+    protected getProjectID() {
         return this.projectId
     }
 
@@ -24,7 +25,7 @@ class FirestoreEmulatorProvider {
         }).firestore()
     }
 
-    getFirestoreWithAuth(uid = "test_user", email = "test_user@dummy.mail") {
+    getFirestoreWithAuth(uid: string = "test_user", email: string = "test_user@dummy.mail") {
         return firebase.initializeTestApp({
             projectId: this.getProjectID(),
             auth: {uid: uid, email: email},
@@ -39,5 +40,3 @@ class FirestoreEmulatorProvider {
         return Promise.all(firebase.apps().map(app => app.delete()))
     }
 }
-
-module.exports = FirestoreEmulatorProvider;
