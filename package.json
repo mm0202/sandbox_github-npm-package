@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/mm0202/sandbox_github-npm-package#readme",
   "dependencies": {
-    "@firebase/testing": "^0.16.12"
+    "@firebase/testing": "^0.15.1"
   }
 }
