@@ -1,7 +1,7 @@
 import * as firebase from "@firebase/testing";
 import * as fs from "fs";
 
-export default class FirestoreEmulatorProvider {
+export class FirestoreEmulatorProvider {
     private readonly rules: string;
 
     constructor(private projectId: string, rulesFilePath: string = 'firestore.rules') {
